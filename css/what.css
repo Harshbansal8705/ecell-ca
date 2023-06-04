@@ -1,0 +1,225 @@
+/* .what_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    
+} */
+
+.what_container {
+    display: grid;
+    grid-gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .what_container {
+      grid-template-columns: repeat(2, 1fr);
+      
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .what_container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+.what_flip_container {
+    
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    height: 10px;
+    width: 20vw;
+    margin-bottom: 15vw;
+  }
+
+ 
+  
+  .what_flipper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .what_flip_container:hover .what_flipper {
+    transform: rotateY(180deg);
+  }
+  
+  .what_front,
+  .what_back {
+    
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    
+  }
+  
+  .what_front {
+    z-index: 2;
+    background-color: transparent;
+  }
+  .what_front .what_title{
+    color: azure;
+    text-align: center;
+  }
+
+  .what_front img{
+    max-width: 50%;
+    max-height: 50%;
+    height: 12rem;
+  }
+  
+
+  .what_back {
+    transform: rotateY(180deg);
+    background-color: transparent;
+  }
+  
+  .what_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .what_title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+  
+  .what_description {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 0 1rem;
+  }
+
+
+
+
+
+  .resp_property-card
+  {
+    height:18em;
+    width:14em;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    position:relative;
+
+    -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius:16px;
+    overflow:hidden;
+    -webkit-box-shadow:  15px 15px 27px #d4fafe19, -15px -15px 27px #d4fafe31;
+    box-shadow:  15px 15px 27px #d4fafe44, -15px -15px 27px #d4fafe45
+  }
+  /* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+  
+  /* Top Half of card, image. */
+  
+  .resp_property-image
+  {
+    height:6em;
+    width:14em;
+    padding:1em 2em;
+    position:Absolute;
+    top:0px;
+    -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-color: transparent;
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+  
+  /* Bottom Card Section */
+  
+  .resp_property-description
+  {
+    background-color: #33383851;
+    height:12em;
+    width:14em;
+    position:absolute;
+    bottom:0em;
+    -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 0.5em 1em;
+    text-align:center;
+  }
+  
+  .resp_property-description img{
+    width: 5vw;
+    height: 5vw;
+  }
+  /* Social Icons */
+  
+  .resp_property-social-icons
+  {
+    width:1em;
+    height:1em;
+    background-color:black;
+    position:absolute;
+    bottom:1em;
+    left:1em;
+    -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  
+  /* Property Cards Hover States */
+  
+  .resp_property-card:hover .resp_property-description
+  {
+    height:0em;
+    padding:0px 1em;
+  }
+  .resp_property-card:hover .resp_property-image
+  {
+    height:18em;
+  }
+  
+  .resp_property-card:hover .resp_property-social-icons
+  {
+    background-color:white;
+  }
+  
+  .resp_property-card:hover .resp_property-social-icons:hover
+  {
+    background-color:blue;
+    cursor:pointer;
+  }
+  
+  
+  .resp_property-image-title
+  {
+  text-align:center;
+  position:Relative;
+  top:0%;
+  opacity:0;
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  color: azure;
+  font-size:1.8em;
+  }
+  
+  .resp_property-card:hover .resp_property-image-title
+  {
+  opacity:1;
+  }
+  
+  
+  .resp_container_workshops {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
